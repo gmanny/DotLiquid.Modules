@@ -1,0 +1,11 @@
+﻿{% module conditional %}
+    {% section test %}
+        {% test %}
+            nonconditional
+    {% endsection %}
+
+    {% section test cond == 1 %}
+        {% test %}
+            conditional
+    {% endsection %}
+{% endmodule %}

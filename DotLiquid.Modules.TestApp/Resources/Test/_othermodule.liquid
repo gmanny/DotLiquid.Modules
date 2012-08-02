@@ -1,0 +1,28 @@
+﻿{% module othermodule %}
+    {% section one 123 == 123 %}
+        {% test %}
+            first.
+        {% world %}
+            goes
+        {% hello %}
+            Dependency
+    {% endsection %}
+
+    {% section one ass == "22" %}
+        {% test %}
+            ==.
+        {% world %}
+            {{ ass }}
+        {% hello %}
+            ==
+    {% endsection %}
+
+    {% section idk %}
+        
+        IDK WTF!?
+
+        {% class %}
+            okay
+
+    {% endsection %}
+{% endmodule %}

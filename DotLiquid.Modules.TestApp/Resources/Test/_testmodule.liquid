@@ -1,0 +1,23 @@
+﻿{% module testmodule %}
+    {% dependson othermodule %}
+
+    {% section css %}
+        {% type %} less
+        {% path %} less.less
+    {% endsection %}
+
+    {% section one %}
+        {% test %}
+            Test
+        {% hello %}
+            Hello
+        {% world %}
+            World!
+    {% endsection %}
+
+    {% section last %}
+        
+        Just the body text, it will appear in place of -body- placeholder.
+
+    {% endsection %}
+{% endmodule %}
