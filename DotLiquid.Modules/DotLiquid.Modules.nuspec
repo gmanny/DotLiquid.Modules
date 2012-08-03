@@ -10,7 +10,7 @@
     <!-->iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Modules engine for DotLiquid, allows you to build your web pages out of modules with automatic dependency resolution. Makes it easier to build single-page webapps.</description>
-    <releaseNotes>Initial release.</releaseNotes>
+    <releaseNotes>Added ModulePath.cs tag to help with module naming, fixed bug where modules from directories weren't depend'd correctly, now dependson's inclusion path is relative.</releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>Liquid DotLiquid Template Module Dependencies</tags>
   </metadata>

@@ -13,5 +13,7 @@ namespace DotLiquid.Modules
         private readonly List<Module> _dependencyOrder = new List<Module>();
 
         public List<Module> DependencyOrder { get { return _dependencyOrder; } }
+
+        public string PathPrefix { get; set; }
     }
 }

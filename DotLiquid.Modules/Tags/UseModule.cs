@@ -56,8 +56,21 @@ namespace DotLiquid.Modules.Tags
                 return ctx.ModuleIndex[moduleName];
             }
 
+            // we deal with paths mess and add path prefix here
+            string fullModuleName = (ctx.PathPrefix ?? "") + moduleName;
+            string modulePath = (Path.GetDirectoryName(fullModuleName) ?? "").Replace('\\', '/');
+            string moduleFileName = Path.GetFileName(fullModuleName);
+
+            // remember old path prefix
+            string oldPathPrefix = ctx.PathPrefix;
+
+            // set new one
+            ctx.PathPrefix = String.IsNullOrEmpty(modulePath) 
+                ? null 
+                : modulePath + (!modulePath.EndsWith("/") ? "/" : "");
+
             // freaking file system tries to evaluate it for us
-            string moduleNameQuoted = "\"" + moduleName + "\"";
+            string moduleNameQuoted = "\"" + fullModuleName + "\"";
 
             // load module file and parse it.
             IFileSystem fileSystem = global.Registers["file_system"] as IFileSystem ?? Template.FileSystem;
@@ -75,12 +88,15 @@ namespace DotLiquid.Modules.Tags
                                                    {
                                                        AddModuleToContext(m, ctx, global, dependencyGraph);
 
-                                                       if (m.ModuleName == moduleName)
+                                                       if (m.ModuleName == moduleFileName)
                                                        {
                                                            rootMod = m;
                                                        }
                                                    }
                                                });
+
+            // return path prefix
+            ctx.PathPrefix = oldPathPrefix;
 
             return rootMod;
         }

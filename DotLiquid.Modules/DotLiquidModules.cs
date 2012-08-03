@@ -15,6 +15,7 @@ namespace DotLiquid.Modules
             Template.RegisterTag<Section>("section");
             Template.RegisterTag<UseModule>("usemodule");
             Template.RegisterTag<WriteSection>("writesection");
+            Template.RegisterTag<ModulePath>("modulepath");
         }
     }
 }
