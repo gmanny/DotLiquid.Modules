@@ -87,6 +87,9 @@ namespace DotLiquid.Modules.Tags
                                 RenderAll(o as List<object>, context, result);
                             }
                         }
+
+                        // then render the ending that's stored in NodeList
+                        RenderAll(NodeList, context, result);
                     }
                 }
             }
