@@ -49,8 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
+    <Compile Include="AbstractTests.cs" />
+    <Compile Include="EnvironmentStorageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterStorageTests.cs" />
+    <Compile Include="Tests.cs" />
     <Compile Include="Util\ResourceFileSystem.cs" />
   </ItemGroup>
   <ItemGroup>

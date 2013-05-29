@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using DotLiquid.Modules.Tags;
-using QuickGraph;
 
 namespace DotLiquid.Modules
 {

@@ -37,17 +37,17 @@ namespace DotLiquid.Modules.Tags
         public override void Render(Context context, TextWriter result)
         {
             // get modules context
-            ModulesContext mod = context.Registers["modules"] as ModulesContext;
-
-            // alow section names to be variables too
-            object evalName = context[_sectionName];
-            string secName = evalName != null ? Convert.ToString(evalName) : _sectionName;
+            ModulesContext mod = DotLiquidModules.ContextExtractor.GetModulesContext(context);
 
             // there was no modules loaded, so section is empty
             if (mod == null)
             {
                 return;
             }
+
+            // alow section names to be variables too
+            object evalName = context[_sectionName];
+            string secName = evalName != null ? Convert.ToString(evalName) : _sectionName;
 
             // walk the dependency graph
             foreach (Module module in mod.DependencyOrder)

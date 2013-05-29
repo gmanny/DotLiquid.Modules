@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace DotLiquid.Modules.Tags
@@ -7,8 +6,6 @@ namespace DotLiquid.Modules.Tags
     public class Module : Block
     {
         private string _name; // token from script
-
-        private string _realName; // name evaluated into string
 
         public string ModuleName { get { return _name; } }
 

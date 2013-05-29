@@ -18,8 +18,7 @@ namespace DotLiquid.Modules.Tags
         public override void Render(Context context, TextWriter result)
         {
             // init modules context
-            context.Registers["modules"] = context.Registers["modules"] ?? new ModulesContext();
-            ModulesContext modules = context.Registers.Get<ModulesContext>("modules");
+            ModulesContext modules = DotLiquidModules.ContextExtractor.GetOrAddModulesContext(context);
 
             // we change prefix on render, to make multiple usage work
             // also we can therefore evaluate markup as an expression

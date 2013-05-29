@@ -58,6 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextExtractor\ContextStorageType.cs" />
+    <Compile Include="ContextExtractor\EnvironmentContextExtractor.cs" />
+    <Compile Include="ContextExtractor\IContextExtractor.cs" />
+    <Compile Include="ContextExtractor\RegistersContextExtractor.cs" />
     <Compile Include="ModulesContext.cs" />
     <Compile Include="DotLiquidModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +75,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

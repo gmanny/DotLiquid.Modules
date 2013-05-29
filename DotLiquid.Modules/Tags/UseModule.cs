@@ -21,9 +21,8 @@ namespace DotLiquid.Modules.Tags
         public override void Render(Context context, TextWriter result)
         {
             // init modules context
-            context.Registers["modules"] = context.Registers["modules"] ?? new ModulesContext();
-            ModulesContext modules = context.Registers.Get<ModulesContext>("modules");
-
+            ModulesContext modules = DotLiquidModules.ContextExtractor.GetOrAddModulesContext(context);
+            
             // allow module name to be supplied as a variable, makes sense when you supply modules in the Model
             object evalName = context[_moduleName];
             string modName = evalName != null ? Convert.ToString(evalName) : _moduleName;
